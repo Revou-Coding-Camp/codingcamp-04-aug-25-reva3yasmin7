@@ -35,8 +35,15 @@
                 <p class="text-center text-gray-600">Enter your todo item and a date to complete it.</p>
                 
                 <form id="todo-form" class="mt-5">
+                    <div class="flex space-x-45 text-center mb-4 text-gray-600 border-b pb-2 border-gray-500 line-clamp-1">
+                        <span class="">Todo Item</span>
+                        <span class="">Start Date</span>
+                        <span class="">Due Date</span>
+                    </div>
                     <div class="flex justify-center mt-5 mb-5">
                         <input type="text" id="todo-input" placeholder="Add a new todo" class="border p-2 w-1/2">
+                        <input type="date" id="todo-date" placeholder="Enter due date (YYYY-MM-DD)" class="border p-2 w-1/2 ml-2">
+                        
                         <input type="date" id="date-input" placeholder="Add a new todo" class="border p-2 w-1/2">
                         <button type="button" onclick="validateForm();"
                         class="rounded-[4px] ml-2 bg-blue-500 text-white p-2">Add
@@ -65,21 +72,26 @@
                             <button onclick="filterTodos('all');" class="bg-blue-500 text-white px-2 py-2 rounded">Reset Filter</button>
                             <button onclick="filterTodos('today');" class="bg-green-500 text-white px-2 py-2 rounded">Today</button>
                             <button onclick="filterTodos('upcoming');" class="bg-yellow-500 text-white px-2 py-2 rounded">Upcoming</button>
+                        </div>
                         </br>
+                        <div class="flex space-x-2">
                             <button onclick="filterTodos('completed');" class="bg-purple-500 text-white px-2 py-2 rounded">Completed</button>
                             <button onclick="filterTodos('incomplete');" class="bg-red-500 text-white px-2 py-2 rounded">Incomplete</button>
+                    
                         </div>
                     </div>
                     <div class="overflow-x-auto">
                             <div class="flex justify-between mb-4 text-gray-600 border-b pb-2 border-gray-500 line-clamp-1">
                                 <span class="">Todo Item</span>
+                                <span class="">Start Date</span>
                                 <span class="">Due Date</span>
-                                <span class="">Actions</span>
-                                <span class>Completed</span>
+                                <span class="">Completed</span>
                             </div>
+                        
                         <ul id="todo-items" class="list-disc list-inside">
                             <ul class="text-gray-600">No todos added yet.</li>
                             <!-- Todo items will be dynamically added here -->
+                            <script src="js/script.js"></script>
                         </ul>
                     </div>
                 </div>

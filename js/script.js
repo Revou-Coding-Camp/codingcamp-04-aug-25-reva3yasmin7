@@ -22,7 +22,8 @@ function addTodo(todo, date) {
     // Create a todo item object
     const todoItem = {
         task: todo,
-        date: date,
+        start_date: date,
+        due_date: date,
         completed: false // Initially set completed to false
     };
 
@@ -39,6 +40,30 @@ function displayTodos() {
 
     // Loop through the todoList array and create list items
     todoList.forEach((item, index) => {
+        todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.completed ? 'line-through' : ''}">${item.task} (${item.date})</div>`;
+    });
+}
+
+function filterTodos(filter) {
+    const todoListElement = document.getElementById('todo-list');
+    todoListElement.innerHTML = ''; // Clear the list before filtering
+
+    // Filter the todoList array based on the selected filter
+    const filteredTodos = todoList.filter(item => {
+        if (filter === 'completed') {
+            return item.completed;
+        } else if (filter === 'incomplete') {
+            return !item.completed;
+        } else if (filter === 'today') {
+            return item.date === new Date().toISOString().split('T')[0];
+        } else if (filter === 'upcoming') {
+            return item.date > new Date().toISOString().split('T')[0];
+        }
+        return true; // Show all todos by default
+    });
+
+    // Display the filtered todo list
+    filteredTodos.forEach(item => {
         todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.completed ? 'line-through' : ''}">${item.task} (${item.date})</div>`;
     });
 }
