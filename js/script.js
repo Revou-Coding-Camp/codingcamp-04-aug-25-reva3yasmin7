@@ -40,7 +40,7 @@ function displayTodos() {
 
     // Loop through the todoList array and create list items
     todoList.forEach((item, index) => {
-        todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.completed ? 'line-through' : ''}">${item.task} (${item.date})</div>`;
+        todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.completed ? 'line-through' : ''}">${item.task} Start: ${item.start_date} Due: ${item.due_date} </div>`;
     });
 }
 
