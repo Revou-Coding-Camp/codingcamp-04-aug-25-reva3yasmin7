@@ -4,17 +4,20 @@ let todoList = [];
 
 function validateForm() {
     const todoInput = document.getElementById('todo-input').value.trim();
-    const dateInput = document.getElementById('date-input').value;
+    const startDateInput = document.getElementById('start_date-input').value;
+    const dueDateInput = document.getElementById('due_date-input').value;
 
     // Check if inputs are empty
-    if (todoInput === '' || dateInput === '') {
-        alert('Please enter a todo item and a due date.');
+    if (todoInput === '' || startDateInput === '' || dueDateInput === '') {
+        alert('Please enter a todo item, start date, and due date.');
     } else {
         // Add the todo item to the list
-        addTodo(todoInput, dateInput);
+        addTodo(todoInput, startDateInput, dueDateInput);
         // Clear the input fields
         document.getElementById('todo-input').value = '';
-        document.getElementById('date-input').value = '';
+        document.getElementById('start_date-input').value = '';
+        document.getElementById('due_date-input').value = '';
+        document.getElementById('is_complete-input').value = '';
     }
 }
 
@@ -30,7 +33,10 @@ function addTodo(todo, date) {
     // Add the todo item to the todoList array
     todoList.push(todoItem);
     // Display the updated todo list
+    filterTodos('reset');
     displayTodos();
+    
+    
 }
 
 function displayTodos() {
@@ -71,7 +77,7 @@ function filterTodos(filter) {
 
     // Display the filtered todo list
     filteredTodos.forEach(item => {
-        todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.completed ? 'line-through' : ''}">${item.task} (${item.date})</div>`;
+        todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.task} Start: ${item.start_date} Due: ${item.due_date} </div>`;
     });
 }
 
