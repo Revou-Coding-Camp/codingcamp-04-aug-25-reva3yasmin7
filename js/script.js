@@ -10,6 +10,9 @@ function validateForm() {
     // Check if inputs are empty
     if (todoInput === '' || startDateInput === '' || dueDateInput === '') {
         alert('Please enter a todo item, start date, and due date.');
+        if (startDateInput < new Date().toISOString().split('T')[0]) {
+            alert('Please enter a valid start date.');
+        }
     } else {
         // Add the todo item to the list
         addTodo(todoInput, startDateInput, dueDateInput);
@@ -33,10 +36,7 @@ function addTodo(todo, date) {
     // Add the todo item to the todoList array
     todoList.push(todoItem);
     // Display the updated todo list
-    filterTodos('reset');
-    displayTodos();
-    
-    
+    updateTodos();
 }
 
 function displayTodos() {
@@ -44,6 +44,16 @@ function displayTodos() {
     const todoListElement = document.getElementById('todo-list');
     todoListElement.innerHTML = ''; // Clear the list before displaying
 
+    // Loop through the todoList array and create list items
+    todoList.forEach((item, index) => {
+        todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.completed ? 'line-through' : ''}">${item.task} Start: ${item.start_date} Due: ${item.due_date} </div>`;
+    });
+}
+
+function updateTodos() {
+    // Get the todo list element from the DOM
+    const todoListElement = document.getElementById('todo-list');
+    todoListElement.innerHTML = ''; // Clear the list before updating
     // Loop through the todoList array and create list items
     todoList.forEach((item, index) => {
         todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${item.completed ? 'line-through' : ''}">${item.task} Start: ${item.start_date} Due: ${item.due_date} </div>`;

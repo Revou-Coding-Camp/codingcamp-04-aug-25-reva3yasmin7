@@ -97,12 +97,18 @@
                         <ul id="todo-items" class="list-disc list-inside">
                             <ul class="text-gray-600">No todos added yet.</li>
                             <!-- Todo items will be dynamically added here -->
+                            <div id="todo-list" class="text-gray-600">
+                                <!-- Todo items will be dynamically added here -->
                             <script src="js/script.js">
                                 // Call the function to display todos on page load
                                 displayTodos();
                                     
                                 
+                                todoList.forEach(todo => {
+                                    todoListElement.innerHTML += `<div class="text-gray-700 text-xl ${todo.completed ? 'line-through' : ''}">${todo.task} Start: ${todo.start_date} Due: ${todo.due_date}</div>`;
+                                });
                             </script>
+                            </div>
                             
                         </ul>
                     </div>
