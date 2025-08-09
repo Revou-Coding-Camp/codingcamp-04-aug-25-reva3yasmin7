@@ -59,6 +59,13 @@ function filterTodos(filter) {
         } else if (filter === 'upcoming') {
             return item.date > new Date().toISOString().split('T')[0];
         }
+        else if (filter === 'overdue') {
+            return item.date < new Date().toISOString().split('T')[0];
+        }
+        else if (filter === 'reset') {
+            return true; // Show all todos by default
+        }
+
         return true; // Show all todos by default
     });
 

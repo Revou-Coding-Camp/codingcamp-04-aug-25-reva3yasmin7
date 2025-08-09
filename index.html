@@ -65,19 +65,25 @@
             <section id="todo-list" class="mt-5">
                 <div class="bg-white shadow-md rounded p-4 mb-5">
                     <h3 class="text-lg font-semibold mb-2">Your Todos</h3>
-                    <p class="text-gray-600">Filter your todos by date.</p>
-                </div>
+                    <p class="text-gray-600 mb-4">Here you can view, filter, and manage your todo items.</p>
                     <div class="flex justify-between mb-4">
                         <div class="flex space-x-2">
-                            <button onclick="filterTodos('all');" class="bg-blue-500 text-white px-2 py-2 rounded">Reset Filter</button>
-                            <button onclick="filterTodos('today');" class="bg-green-500 text-white px-2 py-2 rounded">Today</button>
-                            <button onclick="filterTodos('upcoming');" class="bg-yellow-500 text-white px-2 py-2 rounded">Upcoming</button>
+                            <p class="text-gray-600">Filter your todos by date.</p>
+                            <div>
+                                <button onclick="filterTodos('all');" class="bg-blue-500 text-white px-2 py-2 rounded">Reset Filter</button>
+                                <button onclick="filterTodos('today');" class="bg-green-500 text-white px-2 py-2 rounded">Today</button>
+                                <button onclick="filterTodos('upcoming');" class="bg-yellow-500 text-white px-2 py-2 rounded">Upcoming</button>
+                                <button onclick="filterTodos('overdue');" class="bg-red-500 text-white px-2 py-2 rounded">Overdue</button>
+                            </div>
                         </div>
                         </br>
                         <div class="flex space-x-2">
-                            <button onclick="filterTodos('completed');" class="bg-purple-500 text-white px-2 py-2 rounded">Completed</button>
-                            <button onclick="filterTodos('incomplete');" class="bg-red-500 text-white px-2 py-2 rounded">Incomplete</button>
-                    
+                            <p class="text-gray-600">Filter your todos by status.</p>
+                            <div>
+                                <button onclick="filterTodos('completed');" class="bg-purple-500 text-white px-2 py-2 rounded">Completed</button>
+                                <button onclick="filterTodos('incomplete');" class="bg-red-500 text-white px-2 py-2 rounded">Incomplete</button>
+
+                            </div>
                         </div>
                     </div>
                     <div class="overflow-x-auto">
