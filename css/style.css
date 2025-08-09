@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+title {
+    font-size: 2rem;
+    font-weight: italic;
+    color: #333;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    height: 10vh;
+    place-content: center;
+}
+header {
+    background-color: #0008fb;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+container {
+    border: 2px solid #12f5db;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+main {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+button:hover {
+  cursor: pointer;
+}
