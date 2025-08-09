@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Project - Reva Yasmin N.</title>
+
+    <!-- CSS External Link -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+    <!-- Main Header -->
+
+    <header class="text-center bg-white-800 text-blue-500 px-4 border-b-2 border-gray-200 py-2">
+        <h1 class="text-3xl font-bold text-white">Todo List App</h1>
+        <h1 class="text-lg mt-2">
+            <span class="text-sm text-gray-200">A simple todo list application</span>
+            <span class="text-sm text-blue-400">by Reva Yasmin N.</span>
+        </h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-[12px]">
+        <!-- Form Section -->
+         
+        <div class="bg-gray shadow-md rounded p-4 mb-5">
+            <div class="text-center mb-4">
+                <h2 class="text-2xl font-bold text-center mt-5">Add Your Todos</h2>
+                <p class="text-center text-gray-600">Enter your todo item and a date to complete it.</p>
+                <div class="text-center mt-2 mb-5">
+                    <span class="text-sm text-gray-500">Use the filter button to view todos by date.</span>
+                </div>
+                <form>
+                    <div class="flex justify-center mt-5 mb-5">
+                        <input type="text" id="todo-input" placeholder="Add a new todo" class="border p-2 w-1/2">
+                        <input type="date" id="date-input" placeholder="Add a new todo" class="border p-2 w-1/2">
+                        <button type="button" onclick="validateForm();"
+                        class="rounded-[4px] ml-2 bg-blue-500 text-white p-2">Add
+                        Todo</button>
+                    </div>
+                </form>
+            </div>
+            
+
+            
+            <!-- Action Section -->
+            <section class="flex justify-between">
+                <button onclick="clearTodos();" class="rounded-[4px] bg-red-500 text-white p-2">Delete All</button>
+            </section>
+
+
+
+            <!-- Todo List Section -->
+            <section id="todo-list" class="mt-5">
+                <div class="bg-white shadow-md rounded p-4 mb-5">
+                    <h3 class="text-lg font-semibold mb-2">Your Todos</h3>
+                    <p class="text-sm text-gray-500 mb-4">Here you can see all your todo items.</p>
+                    <div class="flex justify-between mb-4">
+                        <button onclick="filterTodos('all');" class="bg-blue-500 text-white px-4 py-2 rounded">All</button>
+                        <button onclick="filterTodos('today');" class="bg-green-500 text-white px-4 py-2 rounded">Today</button>
+                        <button onclick="filterTodos('upcoming');" class="bg-yellow-500 text-white px-4 py-2 rounded">Upcoming</button>
+                    
+                </div>
+                    <div class="overflow-x-auto">
+                            <div class="flex justify-between mb-4 text-gray-600 border-b pb-2 border-gray-500 line-clamp-1">
+                                <span class="">Todo Item</span>
+                                <span class="">Due Date</span>
+                                <span class="">Actions</span>
+                                <span class>Completed</span>
+                            </div>
+                        <ul id="todo-items" class="list-disc list-inside">
+                            <ul class="text-gray-600">No todos added yet.</li>
+                            <!-- Todo items will be dynamically added here -->
+                        </ul>
+                </div>
+                <!-- List Dummy -->
+                <div>
+
+                </div>
+            </section>
+        
+    </main>
+
+    <!-- Footer Content -->
+    <footer>
+        <p class="text-center text-gray-500 mt-5">© 2025 Todo List Application</p>
+    </footer>
+    
+    <!-- JavaScript External Link -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
